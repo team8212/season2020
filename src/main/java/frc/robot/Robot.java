@@ -8,12 +8,14 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import src.main.java.frc.robot.Test;
+import frc.robot.Test;
 
 // Comment time
 
 public class Robot extends TimedRobot {
   // this is a comment
+
+  public static Test test = new Test(); 
 
   private final Spark mRightMaster = new Spark(0);
   private final Spark mRightSlave = new Spark(1);
@@ -46,6 +48,7 @@ public class Robot extends TimedRobot {
     mDrive.arcadeDrive(-m_stick.getY(), m_stick.getZ());
     
       UpMotors(m_stick.getY());
+      test.nothing(); 
   }
 
   @Override
