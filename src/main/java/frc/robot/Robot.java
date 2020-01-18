@@ -40,7 +40,7 @@ public class Robot extends TimedRobot {
     mDrive.arcadeDrive(-m_stick.getY(), m_stick.getZ());
     if (1 == 1)
     {
-      System.out.println("Obama")
+      System.out.println("Obama");
     }
   }
 
