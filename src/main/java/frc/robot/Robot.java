@@ -38,6 +38,8 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     mDrive.arcadeDrive(-m_stick.getY(), m_stick.getZ());
+    //m_stick.getRawButton(1)
+    //mTopGrab.set(1);
     if (1 == 1)
     {
       System.out.println("Obama");
