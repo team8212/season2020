@@ -42,7 +42,10 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     mDrive.arcadeDrive(-m_stick.getY(), m_stick.getZ());
-    if(x <= 0)
+    if(x >= 0)
+    {
+      System.out.println("x is greater than or equal to zero");
+    }
   }
 
   @Override
