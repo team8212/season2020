@@ -17,7 +17,7 @@ public class Robot extends TimedRobot {
   private final Spark mRightSlave = new Spark(1);
   private final Spark mLeftMaster = new Spark(2);
   private final Spark mLeftSlave = new Spark(3);
-  
+
   private final Spark mUpMaster = new Spark(4);
   private final Spark mUpSlave = new Spark(5);
 
@@ -42,6 +42,7 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     mDrive.arcadeDrive(-m_stick.getY(), m_stick.getZ());
+    if(x <= 0)
   }
 
   @Override
