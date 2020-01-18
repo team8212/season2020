@@ -9,13 +9,15 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends TimedRobot {
+<<<<<<< HEAD
 //poopoofart
+=======
 //poopoo
+>>>>>>> d846400fd98f886e1f1d83dae697c1f778d2e612
   private final Spark mRightMaster = new Spark(0);
   private final Spark mRightSlave = new Spark(1);
   private final Spark mLeftMaster = new Spark(2);
   private final Spark mLeftSlave = new Spark(3);
-  private final Spark mRightCoolBoy = new Spark(4);
 
   private final SpeedControllerGroup mLeftGroup  =  new SpeedControllerGroup(mLeftMaster, mLeftSlave);
   private final SpeedControllerGroup mRightGroup  =  new SpeedControllerGroup(mRightMaster, mRightSlave);
