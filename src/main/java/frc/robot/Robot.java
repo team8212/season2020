@@ -1,5 +1,9 @@
 package frc.robot;
 
+import java.io.ObjectStreamClass;
+
+
+
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Spark;
@@ -44,24 +48,13 @@ public class Robot extends TimedRobot {
     //mRightCoolBoy.set(1);
     //m_stick.getRawButton(1);
     //mRightChad.set(1);
-    if (m_stick.getRawButton(1))
-    {
-      mRightChad.set(1);
-      System.out.println("Obama");
-    }
+ 
+   bothChad((int) m_stick.getY());
+  }
 
-   else if (m_stick.getRawButton(2))
-   {
-    mRightChad.set(-1);
-    System.out.println("Obama");
-   }
-
-   
-    else
-    {
-      mRightChad.set(0);
-      System.out.println("Obama");
-    }
+  public void bothChad(int x){
+    mRightChad.set(x);
+    mLeftChad.set(x);
   }
 
   @Override
