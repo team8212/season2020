@@ -14,7 +14,7 @@ public class Robot extends TimedRobot {
   private final Spark mRightSlave = new Spark(1);
   private final Spark mLeftMaster = new Spark(2);
   private final Spark mLeftSlave = new Spark(3);
-
+//kj
   private final SpeedControllerGroup mLeftGroup  =  new SpeedControllerGroup(mLeftMaster, mLeftSlave);
   private final SpeedControllerGroup mRightGroup  =  new SpeedControllerGroup(mRightMaster, mRightSlave);
 
