@@ -45,9 +45,16 @@ public class Robot extends TimedRobot {
     int x = 0;
     //m_stick.getRawButton(1)
     //mTopGrab.set(.5);
-    if(x < 2){
-      System.out.println("You're cool");
+    
+    
+   if(m_stick.getRawButton(1)) {
+      mClimb.set(.5);
     }
+    if(m_stick.getRawButton(2)){ 
+      mSwirl.set(.0);
+    }
+ 
+  
   }
 
   @Override
