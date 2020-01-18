@@ -8,8 +8,6 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import src.main.java.frc.robot.Test;
-
 // Comment time
 
 public class Robot extends TimedRobot {
