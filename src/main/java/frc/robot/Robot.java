@@ -9,14 +9,15 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends TimedRobot {
-  
   //coffee
   private final Spark mRightMaster = new Spark(0);
-  private final Spark mCatSlave = new Spark(1);
+  private final Spark mRightSlave = new Spark(1);
   private final Spark mLeftMaster = new Spark(2);
   private final Spark mLeftSlave = new Spark(3);
-  private final Spark mLeftSlave = new Spark(4);
-  private final Spark mRightSlave = new Spark(5);
+
+
+  private final Spark mClimb = new Spark(4);
+  private final Spark mSwirl = new Spark(5);
   
   
 //kj
