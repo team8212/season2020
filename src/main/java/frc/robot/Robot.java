@@ -20,8 +20,6 @@ public class Robot extends TimedRobot {
 
   private final Spark mUpMaster = new Spark(4);
   private final Spark mUpSlave = new Spark(5);
-  private final Spark mDownMaster = new Spark(6);
-  private final Spark mDownSlave = new Spark(7);
 
   private final SpeedControllerGroup mLeftGroup  =  new SpeedControllerGroup(mLeftMaster, mLeftSlave);
   private final SpeedControllerGroup mRightGroup  =  new SpeedControllerGroup(mRightMaster, mRightSlave);
@@ -47,18 +45,9 @@ public class Robot extends TimedRobot {
     int x = 0; 
     //m_stick.getRawButton(1)
     // mUpMaster.set(x); 
-    if(m_stick.getRawButton(1))
-    {
-      mUpMaster.set(1);
-    }
-    else if(m_stick.getRawButton(2))
-    {
-      mDownMaster.set(-1);
-    }
-    else 
-    {
-      mDownMaster.set(0);
-    }
+    
+      mUpMaster.set(m_stick.getY());
+      mUpSlave.set(m_stick.getY());
   }
 
   @Override
