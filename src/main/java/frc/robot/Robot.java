@@ -42,15 +42,16 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     mDrive.arcadeDrive(-m_stick.getY(), m_stick.getZ());
-    int x = 0; 
-    //m_stick.getRawButton(1)
-    // mUpMaster.set(x); 
     
-      mUpMaster.set(m_stick.getY());
-      mUpSlave.set(m_stick.getY());
+      UpMotors(m_stick.getY());
   }
 
   @Override
   public void testPeriodic() {
+  }
+  public void UpMotors(double x) {
+
+    mUpMaster.set(x);
+    mUpSlave.set(x);
   }
 }
