@@ -43,6 +43,8 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     mDrive.arcadeDrive(-m_stick.getY(), m_stick.getZ());
     int x = 0;
+    //m_stick.getRawButton(1)
+    //mTopGrab.set(.5);
     if(x < 2){
       System.out.println("You're cool");
     }
