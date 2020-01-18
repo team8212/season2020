@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends TimedRobot {
+  // this is a comment
 
   private final Spark mRightMaster = new Spark(0);
   private final Spark mRightSlave = new Spark(1);
