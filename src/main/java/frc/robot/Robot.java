@@ -28,6 +28,7 @@ public class Robot extends TimedRobot {
 
   private final DifferentialDrive mDrive = new DifferentialDrive(mLeftGroup, mRightGroup);
   private final Joystick m_stick = new Joystick(0);
+  private final XboxController m_stick1 = new XboxController(0);
 
   @Override
   public void robotInit() { 
