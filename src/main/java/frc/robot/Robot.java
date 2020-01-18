@@ -7,13 +7,11 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.XboxController;
 
 import frc.robot.Test;
 
-// Comment time
-
 public class Robot extends TimedRobot {
-  // this is a comment
 
   public static Test test = new Test(); 
 
