@@ -2,12 +2,14 @@ package frc.robot;
 
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.Spark;
+
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.XboxController;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX; 
+import com.ctre.phoenix.motorcontrol.ControlMode; 
 
 import frc.robot.Test;
 
@@ -15,18 +17,16 @@ public class Robot extends TimedRobot {
 
   public static Test test = new Test(); 
 
-  private final Spark mRightMaster = new Spark(0);
-  private final Spark mRightSlave = new Spark(1);
-  private final Spark mLeftMaster = new Spark(2);
-  private final Spark mLeftSlave = new Spark(3);
+  private final VictorSPX mRightMaster = new VictorSPX(1);
+  private final VictorSPX mRightSlave = new VictorSPX(2);
+  private final VictorSPX mLeftMaster = new VictorSPX(3);
+  private final VictorSPX mLeftSlave = new VictorSPX(4);
 
-  private final Spark mUpMaster = new Spark(4);
-  private final Spark mUpSlave = new Spark(5);
+  
 
-  private final SpeedControllerGroup mLeftGroup  =  new SpeedControllerGroup(mLeftMaster, mLeftSlave);
-  private final SpeedControllerGroup mRightGroup  =  new SpeedControllerGroup(mRightMaster, mRightSlave);
+  private final VictorSPX mUpMaster = new VictorSPX(4);
+  private final VictorSPX mUpSlave = new VictorSPX(5);
 
-  private final DifferentialDrive mDrive = new DifferentialDrive(mLeftGroup, mRightGroup);
   private final Joystick m_stick = new Joystick(0);
   private final XboxController m_stick1 = new XboxController(0);
 
@@ -44,18 +44,24 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopPeriodic() {
-    mDrive.arcadeDrive(-m_stick.getY(), m_stick.getZ());
+    //mDrive.arcadeDrive(-m_stick.getY(), m_stick.getZ());
+    //mDrive.arcadeDrive(-m_stick1.getRawAxis(1), 
     
-      UpMotors(m_stick.getY());
-      test.nothing(); 
+      RightMotors(m_stick.getY() + m_stick.getZ());
+      LeftMotors(m_stick.getY() - m_stick.getZ());
   }
 
   @Override
   public void testPeriodic() {
   }
-  public void UpMotors(double x) {
+  public void RightMotors(double x) {
 
-    mUpMaster.set(x);
-    mUpSlave.set(x);
+    mRightMaster.set(ControlMode.PercentOutput, x);
+    mRightSlave.set(ControlMode.PercentOutput,x);
   }
+  public void LeftMotors(double x){
+    mLeftMaster.set(ControlMode.PercentOutput, x); 
+    mLeftSlave.set(ControlMode.PercentOutput,x);
+  }
+
 }
